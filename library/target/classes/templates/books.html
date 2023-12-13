@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books</title>
+</head>
+<body>
+<button><a href = "/">Повернутись на головну сторінку</a></button><br>
+
+<a href = "/book/add">Додати нову книгу</a>
+<hr>
+<br>
+    <div th:each="book : ${books} ">
+
+        <b><p th:text = "${book.title}"/></b>
+        <p th:text = "${book.author}"/>
+        <a th:href = "'/book/' + ${book.id}">Детальніше</a>
+        <hr>
+
+    </div>
+<hr><hr>
+<!-- <p th:text="'hello, '+ ${bookName} + '!'"> </p>-->
+</body>
+</html>

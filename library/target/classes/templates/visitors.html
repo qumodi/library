@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>visitors</title>
+</head>
+<body>
+
+<button><a href = "/">Повернутись на головну сторінку</a></button><br>
+<a href = "/visitor/add">Додати нового відвідувача</a>
+<hr>
+<br>
+<div th:each="visitor : ${visitors} ">
+
+    <b><p th:text = "${visitor.name}+ ' ' +${visitor.surname}"/></b>
+    <p th:text = "${visitor.phoneNumber}"/>
+    <a th:href = "'/visitor/' + ${visitor.id}">Детальніше</a>
+    <hr>
+
+</div>
+<hr><hr>
+
+</body>
+</html>

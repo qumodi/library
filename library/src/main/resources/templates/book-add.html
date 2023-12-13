@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books</title>
+</head>
+<body>
+<h1>Збереження нової книги</h1>
+<button><a href = "/books">Повернутись до списку</a></button>
+<br>
+<div>
+    <form action = "/book/add" method="post">
+        <input type = "text" name = "title" placeholder="Введіть назву книги"><br>
+        <input type = "text" name = "author" placeholder="Введіть автора"><br>
+        <input type = "number" name = "numberOfPages" placeholder="Введіть кількість сторінок"><br>
+        <textarea name = "description" placeholder="Введіть опис"></textarea><br>
+        <button type="submit">Зберегти інформацію</button>
+    </form>
+</div>
+</body>
+</html>

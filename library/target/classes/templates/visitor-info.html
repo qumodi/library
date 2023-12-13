@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>visitor-info</title>
+</head>
+<body>
+<button><a href = "/visitors">Повернутись до списку</a></button>
+<br>
+<div>
+    <hr>
+    <b><p th:text = "${visitor.name}"/></b>
+    <p th:text = "${visitor.surname}"/>
+    <p th:text = "${visitor.id}"/>
+    <p th:number = "${visitor.phoneNumber}"/>
+    <a th:href="'/visitor/' + ${visitor.id} + '/edit'">Редагувати</a>
+    <form th:action="'/visitor/'+ ${visitor.id} + '/delete'" method="post">
+    <button type = "submit">Видалити</button>
+    </form>
+    <hr>
+</div>
+<hr><hr>
+</body>
+</html>

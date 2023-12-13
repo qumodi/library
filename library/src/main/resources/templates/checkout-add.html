@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkouts</title>
+</head>
+<body>
+<h1>Збереження нової видачі</h1>
+<button><a href = "/checkouts">Повернутись до списку</a></button>
+<br>
+<div>
+    <form action = "/checkout/add" method="post">
+        <input type = "number" name = "book" placeholder="Введіть id книги"><br>
+        <input type = "number" name = "visitor" placeholder="Введіть id відвідувача"><br>
+        <input type = "date" name = "checkoutStart" placeholder="Введіть дату видачі"><br>
+        <input type = "date" name = "checkoutEnd" placeholder="Введіть дату повернення"><br>
+        <textarea name = "review" placeholder="Введіть відгук"></textarea><br>
+        <button type="submit">Зберегти інформацію</button>
+    </form>
+</div>
+</body>
+</html>

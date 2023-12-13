@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>visitor-edit</title>
+</head>
+<body>
+<h1>Редагування відвідувача</h1>
+<button><a th:href = "'/visitor/'+ ${visitor.id}">Повернутись</a></button>
+
+<br>
+<div>
+  <form method="post">
+    <input type = "text" th:value="${visitor.name}" name = "name" placeholder="Введіть ім'я відвідувача"><br>
+    <input type = "text" th:value="${visitor.surname}" name = "surname" placeholder="Введіть прізвище відвідувача"><br>
+    <input type = "text" th:value="${visitor.phoneNumber}" name = "phoneNumber" placeholder="Введіть номер телефону"><br>
+    <button type="submit">Обновити інформацію</button>
+  </form>
+</div>
+</body>
+</html>

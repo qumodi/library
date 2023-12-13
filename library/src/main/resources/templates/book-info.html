@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book-info</title>
+</head>
+<body>
+<button><a href = "/books">Повернутись до списку</a></button>
+<br>
+<div>
+    <hr>
+    <b><p th:text = "${book.title}"/></b>
+    <p th:text = "${book.id}"/>
+    <p th:text = "${book.author}"/>
+    <p th:number = "${book.numberOfPages}"/>
+    <p th:text = "${book.description}"/>
+    <a th:href="'/book/' + ${book.id} + '/edit'">Редагувати</a>
+    <form th:action="'/book/'+ ${book.id} + '/delete'" method="post">
+        <button type = "submit">Видалити</button>
+    </form>
+    <hr>
+</div>
+
+Видачі цієї книги
+<div th:each = "checkout : ${checkouts}">
+    <a th:href="'/checkout/'+ ${checkout.id}" th:text="${checkout.checkoutStart} + ' ' +${checkout.visitor.name}"></a>
+</div>
+<hr><hr>
+<!-- <p th:text="'hello, '+ ${bookName} + '!'"> </p>-->
+</body>
+</html>

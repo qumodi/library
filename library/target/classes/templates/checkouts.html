@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkouts</title>
+</head>
+<body>
+<button><a href = "/">Повернутись на головну сторінку</a></button><br>
+<a href = "/checkout/add">Додати нову видачу</a>
+<hr>
+<br>
+<div th:each="checkout : ${checkouts}">
+    <b><p th:text = "${checkout.book.title}"/></b>
+    <p th:text = "${checkout.visitor.name}"/>
+    <p th:date = "${checkout.checkoutStart}"/>
+    <a th:href = "'/checkout/' + ${checkout.id}">Детальніше</a>
+    <hr>
+
+</div>
+<hr><hr>
+<!-- <p th:text="'hello, '+ ${bookName} + '!'"> </p>-->
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book-edit</title>
+</head>
+<body>
+<h1>Редагування книги</h1>
+<button><a th:href = "'/book/'+${book.id}">Повернутись</a></button>
+<br>
+<div>
+    <form method="post">
+        <input type = "text" th:value="${book.title}" name = "title" placeholder="Введіть назву книги"><br>
+        <input type = "text" th:value="${book.author}" name = "author" placeholder="Введіть автора"><br>
+        <input type = "number" th:value="${book.numberOfPages}" name = "numberOfPages" placeholder="Введіть кількість сторінок"><br>
+        <textarea name = "description" placeholder="Введіть опис" th:text="${book.description}"/><br>
+        <button type="submit">Обновити інформацію</button>
+    </form>
+</div>
+</body>
+</html>

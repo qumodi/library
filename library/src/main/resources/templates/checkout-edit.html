@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>checkout-info</title>
+</head>
+<body>
+<button><a th:href = "'/checkout/'+${checkout.id}">Повернутись</a></button>
+
+<br>
+<div>
+  <hr>
+
+  <form method="post">
+    <input type = "number" th:value="${checkout.book.id}" name="bookId" placeholder="Введіть Id книги"><label>Id книги</label><br>
+    <input type = "number" th:value="${checkout.visitor.id}" name="visitorId" placeholder="Введіть Id відвідувача" ><label>Id відвідувача</label><br>
+    <input type = "date" th:value="${checkout.checkoutStart}" name="checkoutStart" placeholder="Введіть дату видачі"><br>
+    <input type = "date" th:value="${checkout.checkoutEnd}" name="checkoutEnd" placeholder="Введіть дату повернення"><br>
+    <input type = "text" th:value="${checkout.review}" name="review" placeholder="Введіть відгук на книгу"><br>
+    <button type = "submit">Обновити інформацію</button>
+  </form>
+
+</div>
+<hr><hr>
+
+</body>
+</html>
